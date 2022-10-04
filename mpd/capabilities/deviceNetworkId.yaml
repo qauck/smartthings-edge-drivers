@@ -1,0 +1,13 @@
+name: 'Device Network ID'
+attributes:
+  deviceNetworkId:
+    schema:
+      type: object
+      properties:
+        value:
+          type: string
+      additionalProperties: false
+      required:
+        - value
+id: 'locketcenter12781.deviceNetworkId'
+version: 1

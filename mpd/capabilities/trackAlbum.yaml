@@ -1,0 +1,13 @@
+name: 'Track Album'
+attributes:
+  trackAlbum:
+    schema:
+      type: object
+      properties:
+        value:
+          type: string
+      additionalProperties: false
+      required:
+        - value
+id: 'locketcenter12781.trackalbum'
+version: 1

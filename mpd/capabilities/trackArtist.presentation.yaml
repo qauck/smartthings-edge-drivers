@@ -1,0 +1,7 @@
+detailView:
+  - label: 'Track Artist'
+    displayType: state
+    state:
+      label: "{{trackArtist.value}}"
+id: 'locketcenter12781.trackartist'
+version: 1

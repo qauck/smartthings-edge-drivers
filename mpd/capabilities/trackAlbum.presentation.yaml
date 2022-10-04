@@ -1,0 +1,7 @@
+detailView:
+  - label: 'Track Album'
+    displayType: state
+    state:
+      label: "{{trackAlbum.value}}"
+id: 'locketcenter12781.trackalbum'
+version: 1

@@ -1,0 +1,104 @@
+dashboard:
+  states:
+    - label: '{{status.value}}'
+      alternatives:
+        - "key": "play"
+          "value": "Playing"
+          "type": "active"
+        - "key": "stop"
+          "value": "Stopped"
+          "type": "inactive"
+        - "key": "pause"
+          "value": "Paused"
+          "type": "inactive"
+  actions:
+    - displayType: toggleSwitch
+      toggleSwitch:
+        command:
+          'name': setStatus
+          'on': play
+          'off': stop
+          'argumentType': string
+        state:
+          value: status.value
+          'on': 'play'
+          'off': 'stop'
+          alternatives:
+            - "key": "play"
+              "value": "Playing"
+              "type": "active"
+            - "key": "stop"
+              "value": "Stopped"
+              "type": "inactive"
+            - "key": "pause"
+              "value": "Paused"
+              "type": "inactive"
+detailView:
+  - label: 'MPD Command'
+    displayType: list
+    list:
+      command:
+        name: setStatus
+        alternatives:
+          - "key": "play"
+            "value": "Play"
+          - "key": "stop"
+            "value": "Stop"
+          - "key": "pause"
+            "value": "Pause"
+          - "key": "next"
+            "value": "Next Track"
+          - "key": "previous"
+            "value": "Previous Track"
+          - "key": "random%201"
+            "value": "Random Mode On"
+          - "key": "random%200"
+            "value": "Random Mode Off"
+          - "key": "repeat%201"
+            "value": "Repeat Mode On"
+          - "key": "repeat%200"
+            "value": "Repeat Mode Off"
+          - "key": "single%201"
+            "value": "Single Mode On"
+          - "key": "single%200"
+            "value": "Single Mode Off"
+      state:
+        value: "status.value"
+        alternatives:
+          - "key": "play"
+            "value": "Playing"
+          - "key": "stop"
+            "value": "Stopped"
+          - "key": "pause"
+            "value": "Paused"
+automation:
+  actions:
+    - label: "Send MPD Command"
+      displayType: list
+      list:
+        command: setStatus
+        alternatives:
+          - "key": "play"
+            "value": "Play"
+          - "key": "stop"
+            "value": "Stop"
+          - "key": "pause"
+            "value": "Pause"
+          - "key": "next"
+            "value": "Next Track"
+          - "key": "previous"
+            "value": "Previous Track"
+          - "key": "random%201"
+            "value": "Random Mode On"
+          - "key": "random%200"
+            "value": "Random Mode Off"
+          - "key": "repeat%201"
+            "value": "Repeat Mode On"
+          - "key": "repeat%200"
+            "value": "Repeat Mode Off"
+          - "key": "single%201"
+            "value": "Single Mode On"
+          - "key": "single%200"
+            "value": "Single Mode Off"
+id: 'locketcenter12781.mpd'
+version: 1

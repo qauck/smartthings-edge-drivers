@@ -1,0 +1,22 @@
+name: mpd.v1
+components:
+  - id: main
+    capabilities:
+      - id: 'locketcenter12781.mpd'
+        version: 1
+      - id: 'locketcenter12781.tracktitle'
+        version: 1
+      - id: 'locketcenter12781.trackalbum'
+        version: 1
+      - id: 'locketcenter12781.trackartist'
+        version: 1
+      - id: 'locketcenter12781.trackProgress'
+        version: 1
+      - id: 'locketcenter12781.deviceNetworkId'
+        version: 1
+      - id: switch
+        version: 1
+      - id: refresh
+        version: 1
+    categories:
+      - name: 'NetworkAudio'

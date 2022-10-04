@@ -1,0 +1,13 @@
+name: 'Track Artist'
+attributes:
+  trackArtist:
+    schema:
+      type: object
+      properties:
+        value:
+          type: string
+      additionalProperties: false
+      required:
+        - value
+id: 'locketcenter12781.trackartist'
+version: 1

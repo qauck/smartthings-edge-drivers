@@ -1,0 +1,13 @@
+name: 'Track Progress'
+attributes:
+  trackProgress:
+    schema:
+      type: object
+      properties:
+        value:
+          type: string
+      additionalProperties: false
+      required:
+        - value
+id: 'locketcenter12781.trackProgress'
+version: 1

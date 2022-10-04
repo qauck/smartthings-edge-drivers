@@ -1,0 +1,5 @@
+name: 'mpd'
+packageKey: 'org.uguess.smartthings.mpd'
+permissions:
+  lan: { }
+  discovery: { }

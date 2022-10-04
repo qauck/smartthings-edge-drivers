@@ -1,0 +1,134 @@
+name: MPD
+attributes:
+  status:
+    schema:
+      type: object
+      properties:
+        value:
+          type: string
+      additionalProperties: false
+      required:
+        - value
+  volume:
+    schema:
+      type: object
+      properties:
+        value:
+          type: integer
+          minimum: 0
+          maximum: 100
+      additionalProperties: false
+      required:
+        - value
+  modeRandom:
+    schema:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+            - 'on'
+            - 'off'
+      additionalProperties: false
+      required:
+        - value
+  modeRepeat:
+    schema:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+            - 'on'
+            - 'off'
+      additionalProperties: false
+      required:
+        - value
+  modeSingle:
+    schema:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+            - 'on'
+            - 'off'
+      additionalProperties: false
+      required:
+        - value
+  trackTitle:
+    schema:
+      type: object
+      properties:
+        value:
+          type: string
+      additionalProperties: false
+      required:
+        - value
+  trackAlbum:
+    schema:
+      type: object
+      properties:
+        value:
+          type: string
+      additionalProperties: false
+      required:
+        - value
+  trackArtist:
+    schema:
+      type: object
+      properties:
+        value:
+          type: string
+      additionalProperties: false
+      required:
+        - value
+commands:
+  setStatus:
+    name: setStatus
+    arguments:
+      - name: status
+        optional: false
+        schema:
+          type: string
+  setVolume:
+    name: setVolume
+    arguments:
+      - name: level
+        optional: false
+        schema:
+          type: integer
+          minimum: 0
+          maximum: 100
+  setModeRandom:
+    name: setModeRandom
+    arguments:
+      - name: state
+        optional: false
+        schema:
+          type: string
+          enum:
+            - 'on'
+            - 'off'
+  setModeRepeat:
+    name: setModeRepeat
+    arguments:
+      - name: state
+        optional: false
+        schema:
+          type: string
+          enum:
+            - 'on'
+            - 'off'
+  setModeSingle:
+    name: setModeSingle
+    arguments:
+      - name: state
+        optional: false
+        schema:
+          type: string
+          enum:
+            - 'on'
+            - 'off'
+id: 'locketcenter12781.mpd'
+version: 1

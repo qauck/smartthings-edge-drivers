@@ -1,0 +1,7 @@
+detailView:
+  - label: 'Device Network ID'
+    displayType: state
+    state:
+      label: "{{deviceNetworkId.value}}"
+id: 'locketcenter12781.deviceNetworkId'
+version: 1

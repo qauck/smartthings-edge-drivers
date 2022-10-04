@@ -1,0 +1,7 @@
+detailView:
+  - label: 'Track Progress'
+    displayType: state
+    state:
+      label: "{{trackProgress.value}}"
+id: 'locketcenter12781.trackProgress'
+version: 1
