@@ -80,6 +80,15 @@ local function updateAttributes(data, device)
     local title = parseResponse(data, 'Title')
     if title ~= nil then
         device:emit_event(track_title_cap.trackTitle(title))
+    else
+        local file = parseResponse(data, 'file')
+        if file ~= nil then
+            local idx = string.reverse(file):find('/', 1, true)
+            if idx ~= nil then
+                title = string.sub(file, string.len(file) - idx + 2)
+                device:emit_event(track_title_cap.trackTitle(title))
+            end
+        end
     end
 
     local album = parseResponse(data, 'Album')
@@ -95,7 +104,7 @@ local function updateAttributes(data, device)
     if state ~= nil then
         local elapsed = parseResponse(data, 'elapsed')
         if elapsed ~= nil then
-            device:emit_event(track_progress_cap.trackProgress(elapsed..' s'))
+            device:emit_event(track_progress_cap.trackProgress(elapsed .. ' s'))
         else
             device:emit_event(track_progress_cap.trackProgress('N/A'))
         end
