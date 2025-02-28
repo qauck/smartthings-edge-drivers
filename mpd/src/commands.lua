@@ -87,6 +87,8 @@ local function updateAttributes(data, device)
             if idx ~= nil then
                 title = string.sub(file, string.len(file) - idx + 2)
                 device:emit_event(track_title_cap.trackTitle(title))
+            else
+                device:emit_event(track_title_cap.trackTitle(file))
             end
         end
     end
@@ -112,9 +114,14 @@ local function updateAttributes(data, device)
 
     local songPos = parseResponse(data, 'song')
     if songPos ~= nil then
+        -- refresh meta
         local success, songData = send_lan_command(device.device_network_id, 'playlistinfo%20' .. songPos)
         if success then
             log.debug('Query song info succeeded: ' .. songPos)
+            -- reset meta first before refresh
+            device:emit_event(track_title_cap.trackTitle('N/A'))
+            device:emit_event(track_album_cap.trackAlbum('N/A'))
+            device:emit_event(track_artist_cap.trackArtist('N/A'))
             updateAttributes(songData, device)
         else
             log.error('Set status failed: ' .. status)
